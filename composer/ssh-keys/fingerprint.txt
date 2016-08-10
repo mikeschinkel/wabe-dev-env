@@ -1,0 +1,17 @@
+The key fingerprint for pantheon-wabe SSH Key is:
+
+SHA256:NHzmZq7KXI5MXqpWVc070MnBwhlKG3L5lHoIuHTrIO4 mikeschinkel@Mikes-MacBook-Pro.local
+
+The key's randomart image is:
++---[RSA 2048]----+
+|     .. +o.X.o   |
+|    o o=.+O B    |
+|   . o o**oo .   |
+|  . o ..+=o o    |
+| . . o .S.+  .   |
+|  .   o  +       |
+| .   .. o .      |
+|  E .* * .       |
+|   ...O.o        |
++----[SHA256]-----+
+

@@ -1,0 +1,69 @@
+{
+  "name": "newclarity/wabe-dev-env",
+  "description": "WABE Development Environment",
+  "license": "n/a",
+  "type": "project",
+  "authors": [
+    {
+      "name": "NewClarity Consulting LLC",
+      "email": "info@newclarity.net",
+      "homepage": "http://newclarity.net"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/wplib/wplib.git"
+    },
+    {
+      "type": "git",
+      "url": "ssh://codeserver.dev.d5981687-a2b6-4a2c-9456-ae933c90b097@codeserver.dev.d5981687-a2b6-4a2c-9456-ae933c90b097.drush.in:2222/~/repository.git",
+      "options": {
+        "ssh": {
+          "username": "composer@newclarity.net",
+          "pubkey_file": "composer/ssh-keys/pantheon-wabe.pub",
+          "privkey_file":"composer/ssh-keys/pantheon-wabe"
+        }
+      }
+    }
+  ],
+  "require": {
+    "composer/installers": "dev-master",
+    "wpackagist-theme/twentysixteen": "*",
+    "wplib/wplib": "0.13.1",
+    "wpackagist-plugin/wp-redis": "0.2.2",
+    "newclarity/wabe": "dev-master"
+  },
+  "require-dev": {
+    "wpackagist-plugin/query-monitor": "2.10.0",
+    "wpackagist-plugin/helpful-information": "1.0.2"
+  },
+  "extra": {
+    "wordpress-install-dir": "www/",
+    "installer-paths": {
+      "www/wp-content/mu-plugins/{$name}": [
+        "type:wordpress-library",
+        "type:wordpress-muplugin",
+        "wpackagist-plugin/wp-redis"
+      ],
+      "www/wp-content/plugins/{$name}": [
+        "type:wordpress-plugin"
+      ],
+      "www/wp-content/themes/{$name}": [
+        "type:wordpress-theme"
+      ]
+    }
+  },
+  "config": {
+    "vendor-dir": "www/vendor",
+    "secure-http": false
+  },
+  "scripts": {
+    "post-install-cmd": "php scripts/after-composer.php",
+    "post-update-cmd": "php scripts/after-composer.php"
+  }
+}
